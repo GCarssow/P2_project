@@ -1,0 +1,15 @@
+{
+  "name": "p2-project",
+  "version": "1.0.0",
+  "description": "Test functionality of my P2 project",
+  "main": "app.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.0.1"
+  }
+}

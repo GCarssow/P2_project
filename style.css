@@ -1,0 +1,45 @@
+body {
+    display: flex;
+}
+
+.random_jokes {
+    display: flex;
+    border: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-color: black;
+}
+
+.random {
+    width: 20vw;
+    height: 5vh;
+    font-size: 18px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 20vw;
+    height: 5vh;
+    font-size: 18px;
+}
+
+#myDropDown {
+    align-items: center;
+    height: 30px;
+    width: 40px;
+}
+
+.theJoke {
+    display: flex;
+    justify-content: space-between 20px;
+    margin: 10px;
+    color: red;
+}
+
+.thePunchline {
+    display: flex;
+    justify-content: space-between 20px;
+    margin: 10px;
+}
