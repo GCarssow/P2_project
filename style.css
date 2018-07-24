@@ -1,5 +1,17 @@
 body {
+    background-image: url('./website_background.jpg');  
+}
+
+.intro {
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
 }
 
 .random_jokes {
@@ -42,4 +54,10 @@ body {
     display: flex;
     justify-content: space-between 20px;
     margin: 10px;
+}
+
+.lotsOfJokes {
+    font-size: 25px;
+    border-color: black;
+    border-width: 5px;
 }

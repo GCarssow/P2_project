@@ -8,16 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="https://pbs.twimg.com/media/Buu34DQCcAATFpR.jpg" alt="" srcset="">
+    <div class='picture'>
+    <img src="https://pbs.twimg.com/media/Buu34DQCcAATFpR.jpg" alt="">
+</div>
+    <div class=intro>
     <h1>The Dad Joke Generator</h1>
     <p>Worried that you won't have a terrible joke ready when you need it to
         embarrass your kids?  Well worry no longer!  The Dad joke Generator
         is here to handle all your embarrassing and groan-inducing joke needs.
     </p>
+    </div>
     <div class="random_jokes">
 <h3>Need a joke quick?  Hit the random joke button before your kids have a chance to get away!</h3>
 
 <button class="random" type="submit">Random Joke!</button>
+<h2 class="jokeSection"></h2>
+<h2 class="punchLineSection"></h2>
 <h3>If you have a little more time, you can grab up to 10 jokes at once!</h3>
 
 <select value="" id="myDropdown" >
@@ -33,13 +39,10 @@
     <option value="10">10</option>
 </select>
 
-<button class="search">Get several jokes!</button>
-<h2 class="jokeSection"></h2>
-<h2 class="punchLineSection"></h2>
+<button class=manyJokesButton>Get several jokes!</button>
+<p class=lotsOfJokes></p>
 </div>
-
-<ul class=joke><br></ul>
-
 <script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </body>
 </html>

@@ -1,71 +1,58 @@
 var fetchUrl = 'https://gp2projectc.herokuapp.com/'
 var drop = document.getElementById('myDropdown')
 var submit = document.querySelector('button')
-var search = document.querySelector('.search')
-
+var manyJokesButton = document.querySelector('.manyJokesButton')
+var manyJokes = document.querySelector('.lotsOfJokes')
 
 submit.addEventListener('click', function getRandomJoke() {
   fetch(fetchUrl)
-  .then(function (response) {
-    return response.json()    
-  })
-  .then(function (corny) {
-    
-    var cornyArray = corny.data
-    
-    
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (corny) {
+    cornyArray = corny.data
     var randomJoke = cornyArray[Math.floor(Math.random() * cornyArray.length)];
-    
-    
     document.querySelector('.jokeSection').innerText = randomJoke.joke
     document.querySelector('.punchLineSection').innerText = randomJoke.punchline
-    
       }
     )
   }
 )
 
 drop.addEventListener('change', function howManyJokes() {
-  
-  var jokePortion = document.querySelector('.joke')
   var numberOfJokes = event.target.value
-  console.log(numberOfJokes);
-  
-  search.addEventListener('click', function getMultipleJokes() {
+  manyJokesButton.addEventListener('click', function getSeveralJokes() {
     fetch(fetchUrl)
     .then(function (response) {
-      return response.json()    
-    })
+      return response.json()
+      })
     .then(function (corny) {
-      
-    var cornyArray = corny.data
-    const shuffled = cornyArray.sort(() => .5 - Math.random());  
-    let selected = shuffled.slice(0,numberOfJokes) 
-    clear()
-    
-    selected.map(moreJokes => {
-      var theJoke = document.createElement('li')
-      var thePunchline = document.createElement('li')    
-      theJoke.innerHTML = moreJokes.joke
-      theJoke.id = "jokeItem"
-      thePunchline.innerHTML = moreJokes.punchline
-      thePunchline.id = "punchlineItem"
-      
-      jokePortion.appendChild(theJoke)
-      document.createElement('br')
-
-      jokePortion.appendChild(thePunchline)
-    })
-    
-    
-          }
-        )
-      }
-    )
-  }
+      cornyArray = corny.data
+      return getRandom(corny)
+    }
+)}
 )
 
-function clear () {
-  var jokePortion = document.querySelector('.joke')
-  jokePortion.innerHTML = ''
-}
+function getRandom() {
+  manyJokes.innerHTML = ''
+  for (i=0; i < numberOfJokes; i++) {
+    var testing = cornyArray[Math.floor(Math.random() * cornyArray.length)];
+    console.log(testing)
+    
+    let arr = new Array()
+      var jokePortion = testing.joke
+      var punchlinePortion = testing.punchline
+      arr.push(`${jokePortion}<br> 
+      ${punchlinePortion}`)
+    
+  var html = `             
+      <p>${arr[0]} 
+      </p>`
+
+  manyJokes.innerHTML += html
+      }
+    }
+  } 
+)
+      
+  
